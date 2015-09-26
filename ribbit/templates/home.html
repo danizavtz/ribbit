@@ -18,15 +18,15 @@
  </div>
 {% endif %}
 
-<img src="{% static "gfx/frog.jpg" %}">
+<img src="{% static 'gfx/frog.jpg' %}" alt="sapo">
 <div class="panel rigth">
-   <h1> new to Ribbit?</h1>
+   <h1>New to Ribbit?</h1>
    <p>
       <form action="/signup" method="post"> {% csrf_token %}
         {% for field in user_form %}
         {{ field }}
         {% endfor %}
-        <input type="submit" value="Create account">
+        <input type="submit" value="Create Account">
       </form>
    </p>
 </div>

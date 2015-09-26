@@ -2,13 +2,13 @@
 <html>
   <head>
     {% load staticfiles %}
-    <link rel="stylesheet/less" href="{% static "style.less" %}" >
-    <script src="{% static "less.js" %}"></script>
+    <link rel="stylesheet/less" href="{% static 'style.less' %}" >
+    <script src="{% static 'less.js' %}"></script>
   </head>
   <body>
     <header>
       <div class="wrapper">
-        <a href="/"><img src="{% static "gfx/logo.png" %}"></a>
+        <a href="/"><img src="{% static 'gfx/logo.png' %}" alt="logo"></a>
         <span>Twitter Clone</span>
         {% block login %}
         <a href="/">Home</a>
@@ -25,14 +25,15 @@
         <div class="wrapper">
           {% block flash %}
           {% if auth_form.non_field_errors or user_form.non_field_errors or ribbit_form.errors %}
+          <div class="flash error">
             {{auth_form.non_field_errors }}
             {{user_form.non_field_errors }}
             {{ribbit_form.content.errors }}
-        </div>
+          </div>
         {% endif %}
         {% if notice %}
         <div class="flash notice">
-           {{notice }}
+           {{ notice }}
         </div>
         {% endif %}
         {% endblock %}
@@ -47,7 +48,7 @@
       <div class="wrapper">
          Ribbit - a twitter clone tutorial
          <a href="http://net.tutsplus.com">
-            <img src="{% static "gfx/logo-nettuts.png" %}">
+            <img src="{% static 'gfx/logo-nettuts.png' %}" alt="">
          </a>
          <a href="http://www.djangoproject.com/">
             <img src="https://www.djangoproject.com/m/img/badges/djangomade124x25.gif" border="0" alt="made with Django" title="Made with Django." />
